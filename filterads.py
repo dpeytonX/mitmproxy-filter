@@ -10,8 +10,17 @@ class Filter:
         self.allowed = {}
 
     def request(self, flow):
-        client = flow.client_conn.address[0].__str__()
-        server = flow.server_conn.address[0].__str__()
+        if(flow.client_conn.address is None):
+            client = flow.client_conn.address[0].__str__()
+        else:
+            client = None
+
+        if(flow.server_conn.address is None):
+            server = flow.server_conn.address[0].__str__()
+        else:
+            server = None
+
+
         if(client is not None):
             self.checkSite(flow, client)
         if(server is not None):
