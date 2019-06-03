@@ -12,9 +12,10 @@ class Filter:
     def request(self, flow):
         client = flow.client_conn.address[0].__str__()
         server = flow.server_conn.address[0].__str__()
-
-        self.checkSite(flow, client)
-        self.checkSite(flow, server)
+        if(client is not None):
+            self.checkSite(flow, client)
+        if(server is not None):
+            self.checkSite(flow, server)
 
     def checkSite(self, flow, site):
         if(site in self.blocked):
