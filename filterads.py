@@ -1,4 +1,6 @@
 from mitmproxy import ctx
+from mitmproxy import exceptions
+
 import re
  
 # https://pgl.yoyo.org/adservers/serverlist.php?showintro=0;hostformat=hosts
@@ -9,39 +11,34 @@ class Filter:
         self.blocked = {}
         self.allowed = {}
 
-    def request(self, flow):
-        if(flow.client_conn.address is None):
-            client = flow.client_conn.address[0].__str__()
-        else:
-            client = None
-
-        if(flow.server_conn.address is None):
-            server = flow.server_conn.address[0].__str__()
+    def serverconnect(self, server_conn):
+        if(server_conn.address is not None):
+            server = server_conn.address[0].__str__()
         else:
             server = None
 
-
-        if(client is not None):
-            self.checkSite(flow, client)
         if(server is not None):
-            self.checkSite(flow, server)
+            if(not self.checkSite(server)):
+                ctx.log.info("Killing flow %s" % server)
+                print(server_conn.address)
+                server_conn.address = ("", server_conn.address[1])
+                #raise exceptions.Kill()
 
-    def checkSite(self, flow, site):
+
+    def checkSite(self, site):
         if(site in self.blocked):
-            ctx.log.info("Killing flow %s from previous match" % site)
-            flow.kill()
             return False
 
         if(site not in self.allowed):
             for line in self.sites:
                 p = re.compile(line, re.IGNORECASE)
-                if(site in self.blocked or p.search(site) is not None):
-                    ctx.log.info("Killing flow %s matching %s" % (site, line))
+                if(p.search(site) is not None):
+                    ctx.log.info("server %s matched filter %s" % (site, line))
                     self.blocked[site] = True
-                    flow.kill()
                     return False
             self.allowed[site] = True
-            return True
+
+        return True
 
 
 addons = [

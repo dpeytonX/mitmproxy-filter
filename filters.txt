@@ -2950,3 +2950,4 @@ zy16eoat1w\.com
 zzhc\.vnet\.cn
 unityads
 supersonicads
+parse\.ly
