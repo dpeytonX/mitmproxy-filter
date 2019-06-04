@@ -2,7 +2,6 @@ from mitmproxy import ctx
 from mitmproxy.proxy.config import HostMatcher
 from filterads import Filter
 import re
- 
 
 # Passthrough - For an SSL proxy, we don't need to snoop packets. Just pass through.
 class XHostMatcher:
