@@ -14237,7 +14237,8 @@ unityads
 supersonicads
 parse\.ly
 taboola\.com
-pop\.taboola\.com
+popup\.taboola\.com
+taboola
 54\.165\.51\.142
 34\.231\.75\.48
 54\.173\.32\.212
@@ -14246,4 +14247,3 @@ pop\.taboola\.com
 52\.207\.111\.186
 35\.173\.3\.255
 52\.73\.9\.93
-
