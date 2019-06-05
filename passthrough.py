@@ -1,6 +1,7 @@
 from mitmproxy import ctx
 from mitmproxy.proxy.config import HostMatcher
-from filterads import Filter
+#from filterads import Filter
+from iptables import IpTables
 import re
 
 # Passthrough - For an SSL proxy, we don't need to snoop packets. Just pass through.
@@ -23,7 +24,7 @@ class XHostMatcher:
 
 class Passthrough:
     def __init__(self):
-        self.filter = Filter()
+        self.filter = IpTables()
 
     def next_layer(self, layer):
         if(layer.server_conn.address is not None):

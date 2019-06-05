@@ -32,7 +32,7 @@ class Filter:
             if(not self.checkSite(server)):
                 ctx.log.info("PASS: Killing flow %s" % server)
                 server_conn.address = ("", server_conn.address[1])
-                #raise exceptions.Kill()
+                return server
 
     def getIp(self, host):
             try:
@@ -55,25 +55,29 @@ class Filter:
         
 
     def checkSite(self, site):
+        if(site in self.blocked):
+            return False
+        if(site in self.allowed):
+            return True
+
         host = self.getHost(site)
         if(host is None):
             host = site
-
-        if(site in self.blocked or host in self.blocked):
+        if(host in self.blocked):
             return False
+        if(host in self.allowed):
+            return True
 
-        if(site not in self.allowed and host not in self.allowed):
-            for line in self.sites:
-                p = re.compile(line, re.IGNORECASE)
+        for line in self.sites:
+            p = re.compile(line, re.IGNORECASE)
 
-                if(p.search(host) is not None or p.search(site) is not None):
-                    ctx.log.info("PASS: server %s,%s matched filter %s" % (host, site, line))
-                    self.blocked[site] = True
-                    self.blocked[host] = True
-                    return False
-            self.allowed[site] = True
-            self.allowed[host] = True
-
+            if(p.search(host) is not None or p.search(site) is not None):
+                ctx.log.info("PASS: server %s,%s matched filter %s" % (host, site, line))
+                self.blocked[site] = True
+                self.blocked[host] = True
+                return False
+        self.allowed[site] = True
+        self.allowed[host] = True
         return True
 
 

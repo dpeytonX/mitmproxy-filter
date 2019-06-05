@@ -14239,6 +14239,11 @@ parse\.ly
 taboola\.com
 popup\.taboola\.com
 taboola
+content-marketing
+s3\.amazonaws\.com\/content-marketing
+hockyapp\.net
+adspyglass
+adspyglass\.com
 54\.165\.51\.142
 34\.231\.75\.48
 54\.173\.32\.212
