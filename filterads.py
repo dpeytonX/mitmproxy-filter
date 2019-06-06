@@ -19,7 +19,7 @@ class Filter:
         for g in self.good:
             self.allowed[g] = True
 
-        self.addIpChains(self.sites)
+        #self.addIpChains(self.sites)
         self.restDelegate = FilterRest(self)
         self.restApp = MitmRest('Filtering',self.restDelegate)
 

@@ -29,7 +29,7 @@ class FilterRest(RestDelegate):
                 self.filterer.allowed = {}
                 # Update blocked site list
                 self.filterer.sites.extend([hostRegex])
-                self.filterer.addIpChains(hostRegex)
+                #self.filterer.addIpChains(hostRegex)
         return "<p>Wrote %s to file.</p>\n%s" % (host, self.index())
 
 
