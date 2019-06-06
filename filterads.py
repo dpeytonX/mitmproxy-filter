@@ -22,7 +22,6 @@ class Filter:
         self.addIpChains(self.sites)
         self.restDelegate = FilterRest(self)
         self.restApp = MitmRest('Filtering',self.restDelegate)
-        self.restApp.start()
 
     def addIpChains(self, hostList):
         for s in hostList:
@@ -52,7 +51,7 @@ class Filter:
                 if(lookup is not None and len(lookup) > 4):
                     return [i[4][0] for i in lookup];
             except socket.gaierror as e:
-                ctx.log.info("PASS: %s : %s" % (e, host))
+                ctx.log.info("PASS: error getting %s" % host)
             return None
 
 
@@ -93,7 +92,3 @@ class Filter:
         self.allowed[host] = True
         return True
 
-
-addons = [
-    Filter()
-]

@@ -14254,14 +14254,8 @@ krxd\.net
 35\.173\.3\.255
 52\.73\.9\.93
 everesttech\.net
-crashlytics
-localytics
 app-measurements\.com
 videohub\.tv
 adcolony\.com
 moonactive\.net
-ads\.usatoday2\.com
-ads\.usatoday2\.com
-ads\.usatoday2\.com
-ads\.usatoday2\.com
-conviva\.com
+newrelic\.com

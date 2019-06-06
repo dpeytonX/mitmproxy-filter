@@ -1,1 +1,2 @@
 api.discovery.com
+viacom.sc.omtrdc.net

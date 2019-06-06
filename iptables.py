@@ -6,8 +6,9 @@ import subprocess
 
 class IpTables(Filter):
     def __init__(self):
-        Filter.__init__(self)
+        subprocess.call(["iptables","-F"])
         self.ipTableList = {}
+        Filter.__init__(self)
 
     #todo: reset iptable rults on deconstruction
     def serverconnect(self, server_conn):
@@ -17,6 +18,3 @@ class IpTables(Filter):
             subprocess.call(["iptables","-A","INPUT","-s",result,"-j","DROP"])
             self.ipTableList[result] = True
 
-addons = [
-    IpTables()
-]

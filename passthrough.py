@@ -42,6 +42,8 @@ class Passthrough:
     def serverconnect(self, conn):
         return self.filter.serverconnect(conn)
 
+passthrough_addon = Passthrough()
+passthrough_addon.filter.restApp.start()
 addons = [
-    Passthrough()
+    passthrough_addon
 ]
