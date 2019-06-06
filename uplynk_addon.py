@@ -15,6 +15,7 @@ class Uplynk:
         if(not self.server_mitm_hosts(server)):
             return
 
+        print(flow.response)
         ct = flow.response.headers["content-type"].lower()
         if(ct is not None and ct.find("mpegurl") != -1):
             ctx.log.info("PASS: found video playlist")
@@ -33,8 +34,3 @@ class Uplynk:
 
             if(newcontent):
                 flow.response.content=newcontent.encode("utf-8")
-
-
-addons = [
-    Uplynk()
-]
