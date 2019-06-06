@@ -1,5 +1,7 @@
 from mitmproxy import ctx
 from mitmproxy import exceptions
+from filterrest import FilterRest
+from rest import MitmRest
 
 import re
 import socket
@@ -9,18 +11,28 @@ import socket
 class Filter:
     def __init__(self):
         self.sites = [line.rstrip('\n') for line in open('filters.txt')]
+        
+        self.good = [line.rstrip('\n') for line in open('whitelist.txt')]
+        self.blocked = {}
+        self.allowed = {}
+        self.addIpChains(self.good)
+        for g in self.good:
+            self.allowed[g] = True
 
-        for s in self.sites:
+        self.addIpChains(self.sites)
+        self.restDelegate = FilterRest(self)
+        self.restApp = MitmRest('Filtering',self.restDelegate)
+        self.restApp.start()
+
+    def addIpChains(self, hostList):
+        for s in hostList:
             if(s.count('.') != 3 or s.count(':') > 0):
                 ip = self.getIp(s.replace('\\',''))
                 if(ip is not None and len(ip) > 0):
-                    self.sites.extend(ip)
+                    hostList.extend(ip)
                     print("PASS: found %s for %s" % (ip, s))
                 else:
                     print("PASS: did not find IP for %s" % s)
-
-        self.blocked = {}
-        self.allowed = {}
 
     def serverconnect(self, server_conn):
         if(server_conn.address is not None):
@@ -58,6 +70,7 @@ class Filter:
         if(site in self.blocked):
             return False
         if(site in self.allowed):
+            ctx.log.info("PASS: %s has been allowed" % site)
             return True
 
         host = self.getHost(site)
