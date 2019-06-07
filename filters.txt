@@ -14260,3 +14260,6 @@ adcolony\.com
 moonactive\.net
 newrelic\.com
 secure-dc\.imrworldwide\.com
+streamingadsdai\.akamaized\.net
+streamingadsdai
+metrics\.aetn\.com

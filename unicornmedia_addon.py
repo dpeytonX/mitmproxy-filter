@@ -2,10 +2,10 @@ from mitmproxy import ctx
 from xhostmatcher import XHostMatcher
 import re
 
-# Alter Uplynk m3u8 playlist to remove ad segments
-class Uplynk:
+# Alter UnicornMedia m3u8 playlist to remove ad segments
+class UnicornMedia:
     def __init__(self):
-        self.server_mitm_hosts = XHostMatcher(['uplynk'])
+        self.server_mitm_hosts = XHostMatcher(['unicornmedia'])
 
     def response(self, flow):
         if(flow.server_conn.address is None):
@@ -16,7 +16,7 @@ class Uplynk:
             return
 
         ct = flow.response.headers["content-type"].lower()
-        if(ct is not None and ct.find("mpegurl") != -1):
+        if(ct is not None and ct.lower().find("mpegurl") != -1):
             ctx.log.info("PASS: found video playlist")
             newcontent=""
             if(flow.response.content is not None):
@@ -31,24 +31,18 @@ class Uplynk:
                 return
         
 
+            #We are looking for EXT-X-KEY:METHOD=NONE -> DISCONTINUITY
             found=False
-            #discontinuity=0
             ctx.log.info("PASS: response\n %s" % content)
             for line in content.splitlines():
                 #print("PASS: %s" % line)
-                if(re.compile("UPLYNK-SEGMENT:.*?,ad").search(line.decode("utf-8"))):
-                    found=True
-                    ctx.log.info("PASS: removing ad")
-                    continue
-                if(re.compile("UPLYNK-SEGMENT:.*?,segment").search(line.decode("utf-8"))):
-                    found=False
-                #if(re.compile("EXT-X-DISCONTINUITY").search(line.decode("utf-8"))):
-                #    discontinuity=1
-                #if(discontinuity > 0 and discontinuity < 3):
-                #    discontinuity += 1
-                #    continue
-                #else:
-                #    discontinuity = 0
+                if(re.compile("EXT-X-KEY:METHOD").search(line.decode("utf-8"))):
+                    if("METHOD=NONE" in line.decode("utf-8")):
+                        found=True
+                        ctx.log.info("PASS: removing ad")
+                    else:
+                        found=False
+
                 if(not found):
                     ctx.log.info("PASS: %s" % line)
                     newcontent+=line.decode("utf-8") + '\n'
