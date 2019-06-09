@@ -11,8 +11,8 @@ import socket
 class Filter:
     def __init__(self):
         self.sites = [line.rstrip('\n') for line in open('filters.txt')]
-        
         self.good = [line.rstrip('\n') for line in open('whitelist.txt')]
+        self.etc_hosts = [line.replace('127.0.0.1\t','').rstrip('\n') for line in open('etc_hosts')]
         self.blocked = {}
         self.allowed = {}
         self.addIpChains(self.good)
@@ -67,6 +67,11 @@ class Filter:
 
     def checkSite(self, site):
         if(site in self.blocked):
+            if(site not in self.etc_hosts): 
+                f = open('etc_hosts', 'a')
+                f.write('\n127.0.0.1\t%s' % site)
+                f.close()
+                self.etc_hosts.extend([site])
             return False
         if(site in self.allowed):
             ctx.log.info("PASS: %s has been allowed" % site)

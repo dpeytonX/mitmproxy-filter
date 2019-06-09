@@ -14296,3 +14296,4 @@ homepros\.zone
 vexacion\.com
 download-for\.me
 lclk\.info
+addthis\.com
