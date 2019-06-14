@@ -18,9 +18,11 @@ class MyHostMatcher(XHostMatcher):
 
 # Passthrough - For an SSL proxy, we don't need to snoop packets unless in the sitm list. Just pass through.
 class Passthrough:
-    def __init__(self):
+    def __init__(self, sitm=None):
         self.filter = IpTables()
-        self.server_mitm_hosts = MyHostMatcher(XHostMatcher([l.rstrip('\n') for l in open('sitm.txt')]))
+        if(sitm is None):
+            sitm = [l.rstrip('\n') for l in open('sitm.txt')]
+        self.server_mitm_hosts = MyHostMatcher(XHostMatcher(sitm))
 
     def next_layer(self, layer):
         root = layer.ctx
