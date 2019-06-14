@@ -14263,3 +14263,5 @@ secure-dc\.imrworldwide\.com
 streamingadsdai\.akamaized\.net
 streamingadsdai
 metrics\.aetn\.com
+pagead2\.googlesyndication\.com
+ade\.googlesyndication\.com
