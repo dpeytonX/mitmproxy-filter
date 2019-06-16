@@ -6,7 +6,7 @@ from youtube_addon import YouTube
 sitm=[
   "uplynk\\.com",
   "unicornmedia\\.com",
-  "youtube\\.com"
+  "(?!ads\\.).*?youtube\\.com"
 ]
 
 passthrough_addon = Passthrough(sitm)
