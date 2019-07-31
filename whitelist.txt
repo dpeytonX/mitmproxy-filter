@@ -1,2 +1,6 @@
 api.discovery.com
 viacom.sc.omtrdc.net
+giphy.com
+api.branch.io
+att.sc.omtrdc.net
+accounts.youtube.com

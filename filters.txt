@@ -908,7 +908,6 @@ amazon-adsystem\.com
 ambiguousquilt\.com
 ambitiousagreement\.com
 americash\.com
-amplitude\.com
 amung\.us
 anahtars\.com
 analytics\.adpost\.org
@@ -1622,7 +1621,6 @@ gp\.dejanews\.com
 gracefulsock\.com
 grandioseguide\.com
 grapeshot\.co\.uk
-graph\.instagram\.com
 greetzebra\.com
 greyinstrument\.com
 greystripe\.com
@@ -14257,8 +14255,8 @@ everesttech\.net
 app-measurements\.com
 videohub\.tv
 adcolony\.com
-moonactive\.net
 newrelic\.com
+ads\.moonactive\.net
 secure-dc\.imrworldwide\.com
 streamingadsdai\.akamaized\.net
 streamingadsdai
