@@ -17,13 +17,13 @@ sudo sysctl -w net.ipv6.conf.lo.forwarding=1
 
 sudo sysctl -w net.ipv4.tcp_fwmark_accept=1
 
-sysctl -w net.ipv4.conf.all.forwarding=1
-sysctl -w net.ipv6.conf.all.forwarding=1
-sysctl -w net.ipv4.conf.all.send_redirects=0
-sysctl -w net.ipv6.conf.all.send_redirects=0
-iptables -F
+sudo sysctl -w net.ipv4.conf.all.forwarding=1
+sudo sysctl -w net.ipv6.conf.all.forwarding=1
+sudo sysctl -w net.ipv4.conf.all.send_redirects=0
+sudo sysctl -w net.ipv6.conf.all.send_redirects=0
+sudo iptables -F
 
-iptables -A PREROUTING -t nat -i eno1 -p tcp --dport 443 -j REDIRECT --to-port 8080
+sudo iptables -A PREROUTING -t nat -i eno1 -p tcp --dport 443 -j REDIRECT --to-port 8080
 
-pushd /home/work/mitmproxy-filter
+pushd $HOME/mitmproxy-filter
 exec sudo mitmdump --showhost -k -s module_passthrough.py | grep PASS
