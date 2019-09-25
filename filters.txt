@@ -14298,3 +14298,4 @@ addthis\.com
 withingadvertly\.pro
 pagead2\.googlesyndication\.com
 ade\.googlesyndication\.com
+yt3\.ggpht\.com
