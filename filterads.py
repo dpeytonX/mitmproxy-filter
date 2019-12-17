@@ -1,7 +1,7 @@
 from mitmproxy import ctx
 from mitmproxy import exceptions
-from filterrest import FilterRest
-from rest import MitmRest
+#from filterrest import FilterRest
+#from rest import MitmRest
 
 import re
 import socket
@@ -20,8 +20,8 @@ class Filter:
             self.allowed[g] = True
 
         #self.addIpChains(self.sites)
-        self.restDelegate = FilterRest(self)
-        self.restApp = MitmRest('Filtering',self.restDelegate)
+        #self.restDelegate = FilterRest(self)
+        #self.restApp = MitmRest('Filtering',self.restDelegate)
 
     def addIpChains(self, hostList):
         for s in hostList:

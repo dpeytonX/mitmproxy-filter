@@ -4,3 +4,7 @@ giphy.com
 api.branch.io
 att.sc.omtrdc.net
 accounts.youtube.com
+translate.google.com
+itunes.apple.com
+hls-amt.itunes.apple.com
+gstatic.com
