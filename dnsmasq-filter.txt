@@ -1184,6 +1184,7 @@
 0.0.0.0	chardwardse.club
 0.0.0.0	chart.dk
 0.0.0.0	chartbeat.com
+0.0.0.0 cnn.io
 0.0.0.0	chartbeat.net
 0.0.0.0	checkm8.com
 0.0.0.0	checkstat.nl
@@ -1332,6 +1333,11 @@
 0.0.0.0	creatives.livejasmin.com
 0.0.0.0	credishe.com
 0.0.0.0	criteo.com
+0.0.0.0 criteo.net
+0.0.0.0 steadfastseat.com
+0.0.0.0 gobankingrates.com
+0.0.0.0 fwmrm.net
+0.0.0.0 cookielaw.org
 0.0.0.0	critictruck.com
 0.0.0.0	croissed.info
 0.0.0.0	crowdgravity.com
@@ -14321,3 +14327,4 @@
 0.0.0.0	ibitu.org
 0.0.0.0	cryptobrowser.site
 0.0.0.0 tremorhub.com
+0.0.0.0 consumertrack.com
