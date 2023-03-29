@@ -14293,6 +14293,7 @@
 0.0.0.0	withingadvertly.pro
 0.0.0.0	pagead2.googlesyndication.com
 0.0.0.0	ade.googlesyndication.com
+0.0.0.0	tpc.googlesyndication.com
 0.0.0.0	yt3.ggpht.com
 0.0.0.0	pubmine.com
 0.0.0.0	superhour.biz
@@ -14319,3 +14320,4 @@
 0.0.0.0	earnbiglist.com
 0.0.0.0	ibitu.org
 0.0.0.0	cryptobrowser.site
+0.0.0.0 tremorhub.com
