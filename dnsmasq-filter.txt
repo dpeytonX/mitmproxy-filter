@@ -14344,3 +14344,6 @@
 0.0.0.0 geoedge.be
 0.0.0.0 geo.yahoo.com
 0.0.0.0 ras.yahoo.com
+0.0.0.0 m.stripe.network
+0.0.0.0 stripe.network
+0.0.0.0 stripe.com
