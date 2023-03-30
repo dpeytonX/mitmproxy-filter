@@ -1416,7 +1416,8 @@
 0.0.0.0	domainsponsor.com
 0.0.0.0	domainsteam.de
 0.0.0.0	domdex.com
-0.0.0.0	doubleclick.*
+0.0.0.0	doubleclick.com
+0.0.0.0	doubleclick.net
 0.0.0.0	doublepimp.com
 0.0.0.0	doubtfulrainstorm.com
 0.0.0.0	downloadr.xyz
@@ -1856,6 +1857,7 @@
 0.0.0.0	liverail.com
 0.0.0.0	lizardslaugh.com
 0.0.0.0	lkqd.com
+0.0.0.0	lkqd.net
 0.0.0.0	loading321.com
 0.0.0.0	log.btopenworld.com
 0.0.0.0	log.logrocket.io
@@ -14329,3 +14331,15 @@
 0.0.0.0 tremorhub.com
 0.0.0.0 consumertrack.com
 0.0.0.0 ad-delivery.net
+0.0.0.0 summerhamster.com
+0.0.0.0 googletagservices.com
+0.0.0.0 aswpsdkus.com
+0.0.0.0 s-onetag.com
+0.0.0.0 boomtrain.com
+0.0.0.0 backenster.com
+0.0.0.0 usabilla.com
+0.0.0.0 beap-bc.yahoo.com
+0.0.0.0 gumgum.com
+0.0.0.0 geoedge.be
+0.0.0.0 geo.yahoo.com
+0.0.0.0 ras.yahoo.com
