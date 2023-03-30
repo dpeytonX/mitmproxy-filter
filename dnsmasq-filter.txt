@@ -14328,3 +14328,4 @@
 0.0.0.0	cryptobrowser.site
 0.0.0.0 tremorhub.com
 0.0.0.0 consumertrack.com
+0.0.0.0 ad-delivery.net
