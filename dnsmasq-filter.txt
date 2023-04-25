@@ -1799,6 +1799,8 @@
 0.0.0.0	k.iinfo.cz
 0.0.0.0	kanoodle.com
 0.0.0.0	kargo.com
+0.0.0.0 a-mo.net
+0.0.0.0 gumgum.com
 0.0.0.0	karisimbi.net
 0.0.0.0	karonty.com
 0.0.0.0	keymedia.hu
@@ -1906,6 +1908,7 @@
 0.0.0.0	matchcraft.com
 0.0.0.0	matheranalytics.com
 0.0.0.0	mathtag.com
+0.0.0.0 studiod.cc
 0.0.0.0	mautic.com
 0.0.0.0	max.i12.de
 0.0.0.0	maximiser.net
@@ -2272,6 +2275,9 @@
 0.0.0.0	publicidad.elmundo.es
 0.0.0.0	publicidees.com
 0.0.0.0	pubmatic.com
+0.0.0.0 presage.io
+0.0.0.0 33across.com
+0.0.0.0 magnite.com
 0.0.0.0	pubs.lemonde.fr
 0.0.0.0	puffyloss.com
 0.0.0.0	puffypull.com
@@ -2623,6 +2629,8 @@
 0.0.0.0	tangerinenet.biz
 0.0.0.0	tangibleteam.com
 0.0.0.0	tapad.com
+0.0.0.0 prreqcroab.com
+0.0.0.0 springserve.com
 0.0.0.0	tapfiliate.com
 0.0.0.0	tapinfluence.com
 0.0.0.0	targad.de
