@@ -1619,6 +1619,8 @@
 0.0.0.0	google-analytics.com
 0.0.0.0	googleadservices.com
 0.0.0.0	googlesyndication.com
+0.0.0.0 pagead2.googlesyndication.com
+0.0.0.0 pagead2.googleadservices.com
 0.0.0.0	gorgeousground.com
 0.0.0.0	gossipmiser.com
 0.0.0.0	gostats.com
@@ -14381,4 +14383,3 @@
 0.0.0.0	pixel.digitru.st
 0.0.0.0 ironsrc.mobi
 0.0.0.0 lunalabs.io
-0.0.0.0 mzstatic.com
