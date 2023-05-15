@@ -14370,6 +14370,7 @@
 0.0.0.0 vungle.com
 0.0.0.0 liftoff.io
 0.0.0.0 adjust.com
+0.0.0.0 adjust.io
 0.0.0.0 braze.com
 0.0.0.0 app-measurement.com
 0.0.0.0 braze-images.com
@@ -14377,3 +14378,7 @@
 0.0.0.0 siftscience.com
 0.0.0.0 alltopcontent.com
 0.0.0.0 ironsource.mobi
+0.0.0.0	pixel.digitru.st
+0.0.0.0 ironsrc.mobi
+0.0.0.0 lunalabs.io
+0.0.0.0 mzstatic.com
